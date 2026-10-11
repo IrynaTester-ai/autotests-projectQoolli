@@ -20,6 +20,7 @@ public class LoginTests extends BaseTest {
         loginPage.login("wrong_user", "secret_sauce");
         Assert.assertTrue(loginPage.getErrorText().contains("Username"));
     }
+
     @Test(description = "Login с пустыми полями")
     public void emptyLoginTest() {
         LoginPage loginPage = new LoginPage(driver, wait);
