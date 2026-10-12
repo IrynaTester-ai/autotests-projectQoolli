@@ -71,7 +71,7 @@ public class CartTests extends BaseTest {
 
         CartPage cart = new CartPage(driver, wait);// Создаем страницу корзины
         cart.removeBackpack();// Удаляем товар Backpack из корзины
-        Assert.assertFalse(cart.isBackpackDisplayed()); // Проверяем, что товар Backpack не отображается в корзине
+        Assert.assertFalse(cart.isBackpackPresent()); // Проверяем, что товар Backpack не отображается в корзине
     }
 
     @Test(description = "Удаление одного товара из двух из корзины")
@@ -85,7 +85,7 @@ public class CartTests extends BaseTest {
 
         CartPage cart = new CartPage(driver, wait);// Создаем страницу корзины
         cart.removeBackpack();// Удаляем товар Backpack из корзины
-        Assert.assertFalse(cart.isBackpackDisplayed());// Проверяем, что товар Backpack не отображается в корзине
+        Assert.assertFalse(cart.isBackpackPresent());// Проверяем, что товар Backpack не отображается в корзине
         Assert.assertTrue(cart.isBikeLightDisplayed());// Проверяем, что товар BikeLight в корзине
     }
 

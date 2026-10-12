@@ -37,6 +37,6 @@ public class CheckoutTests extends BaseTest {
 
         CartPage cart = new CartPage(driver, wait);// Создаем страницу корзины
         cart.continueShopping();// Возврат назад в магазин
-        Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));// Проверяем,что мы снова на странице товаров
+        Assert.assertTrue(driver.getCurrentUrl().contains("inventory"));// Проверяем, что мы снова на странице товаров
     }
 }

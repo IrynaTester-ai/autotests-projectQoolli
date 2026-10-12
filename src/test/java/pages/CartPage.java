@@ -35,11 +35,13 @@ public class CartPage {
         Allure.step("Удаляем Backpack");
         wait.until(ExpectedConditions.elementToBeClickable(removeBackpack));
         driver.findElement(removeBackpack).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(backpack));// Ждём, пока товар реально исчезнет
     }
     public void removeBikeLight(){
         Allure.step("Удаляем Bike Light");
         wait.until(ExpectedConditions.elementToBeClickable(removeBikeLight));
         driver.findElement(removeBikeLight).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(bikeLight));// Ждём, пока товар реально исчезнет
     }
     public void checkout() {
         Allure.step("Нажимаем Checkout");// Оформление заказа
@@ -52,6 +54,9 @@ public class CartPage {
         driver.findElement(continueShopping).click();
     }
     public boolean isBikeLightPresent(){
-        return driver.getPageSource().contains("Sauce Labs Bike Light");//Проверка, что товара больше нет в корзине
+        return driver.getPageSource().contains("Sauce Labs Bike Light");//Проверка, что товара BikeLight больше нет в корзине
+    }
+    public boolean isBackpackPresent(){
+        return driver.getPageSource().contains("Sauce Labs Backpack");//Проверка, что Backpack больше нет в корзине
     }
 }
